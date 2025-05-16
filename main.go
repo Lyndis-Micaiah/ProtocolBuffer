@@ -26,6 +26,13 @@ func main() {
 		},
 	}
 
+	// Xác thực dữ liệu
+	if err := person.Validate(); err != nil {
+		log.Printf("Dữ liệu không hợp lệ: %v", err)
+		return
+	}
+	fmt.Println("Dữ liệu hợp lệ!")
+
 	// Tuần tự hóa thành dữ liệu nhị phân
 	data, err := proto.Marshal(person)
 	if err != nil {
@@ -42,9 +49,18 @@ func main() {
 		log.Fatal("Lỗi khi giải tuần tự hóa:", err)
 	}
 
+	// Xác thực dữ liệu sau khi giải tuần tự hóa
+	if err := newPerson.Validate(); err != nil {
+		log.Printf("Dữ liệu sau giải tuần tự hóa không hợp lệ: %v", err)
+		return
+	}
+
+	// So sánh dữ liệu trước và sau
 	if !proto.Equal(person, newPerson) {
-    log.Fatal("Dữ liệu sau giải tuần tự hóa không khớp")
-}
+		log.Println("Dữ liệu sau giải tuần tự hóa không khớp")
+		return
+	}
+	
 	//Print details of the new person
 	fmt.Printf("Dữ liệu sau khi giải tuần tự hóa:\n")
 	fmt.Printf("Name: %s\n", newPerson.Name)

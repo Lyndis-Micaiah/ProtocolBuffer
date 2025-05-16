@@ -7,6 +7,7 @@
 package pb
 
 import (
+	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -325,21 +326,22 @@ var File_person_proto protoreflect.FileDescriptor
 
 const file_person_proto_rawDesc = "" +
 	"\n" +
-	"\fperson.proto\x12\aexample\"O\n" +
-	"\aAddress\x12\x16\n" +
-	"\x06street\x18\x01 \x01(\tR\x06street\x12\x12\n" +
-	"\x04city\x18\x02 \x01(\tR\x04city\x12\x18\n" +
-	"\acountry\x18\x03 \x01(\tR\acountry\"W\n" +
-	"\vPhoneNumber\x12\x16\n" +
-	"\x06number\x18\x01 \x01(\tR\x06number\x120\n" +
-	"\tphonetype\x18\x02 \x01(\x0e2\x12.example.PhoneTypeR\tphonetype\"\xc7\x01\n" +
-	"\x06Person\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12\x10\n" +
-	"\x03age\x18\x02 \x01(\x05R\x03age\x12\x16\n" +
-	"\x06emails\x18\x03 \x03(\tR\x06emails\x12*\n" +
-	"\aaddress\x18\x04 \x01(\v2\x10.example.AddressR\aaddress\x12'\n" +
-	"\x06gender\x18\x05 \x01(\x0e2\x0f.example.GenderR\x06gender\x12*\n" +
-	"\x05phone\x18\x06 \x03(\v2\x14.example.PhoneNumberR\x05phone*6\n" +
+	"\fperson.proto\x12\aexample\x1a\x17validate/validate.proto\"j\n" +
+	"\aAddress\x12\x1f\n" +
+	"\x06street\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x10\x05R\x06street\x12\x1b\n" +
+	"\x04city\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x10\x02R\x04city\x12!\n" +
+	"\acountry\x18\x03 \x01(\tB\a\xfaB\x04r\x02\x10\x02R\acountry\"`\n" +
+	"\vPhoneNumber\x12\x1f\n" +
+	"\x06number\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x10\n" +
+	"R\x06number\x120\n" +
+	"\tphonetype\x18\x02 \x01(\x0e2\x12.example.PhoneTypeR\tphonetype\"\x83\x02\n" +
+	"\x06Person\x12\x1b\n" +
+	"\x04name\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x10\x01R\x04name\x12\x1b\n" +
+	"\x03age\x18\x02 \x01(\x05B\t\xfaB\x06\x1a\x04\x18x(\x12R\x03age\x12 \n" +
+	"\x06emails\x18\x03 \x03(\tB\b\xfaB\x05\x92\x01\x02\b\x01R\x06emails\x124\n" +
+	"\aaddress\x18\x04 \x01(\v2\x10.example.AddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aaddress\x121\n" +
+	"\x06gender\x18\x05 \x01(\x0e2\x0f.example.GenderB\b\xfaB\x05\x82\x01\x02\x10\x01R\x06gender\x124\n" +
+	"\x05phone\x18\x06 \x03(\v2\x14.example.PhoneNumberB\b\xfaB\x05\x92\x01\x02\b\x01R\x05phone*6\n" +
 	"\x06Gender\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\b\n" +
 	"\x04MALE\x10\x01\x12\n" +
